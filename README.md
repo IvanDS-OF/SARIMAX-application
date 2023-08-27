@@ -38,8 +38,13 @@ warnings.filterwarnings("ignore")
 
 Pra poder hacer uso de la librería para hacer el pronóstico podemos hacer uso del gestor de librerías PIP e instalarla con el siguiente comando: 
 
+```
+pip3 install statsmodels
+```
 
-
+> pip3 version == 23.2.1
+> statsmodel version == 0.14.0
+> setuptools version == 58.1.0
 
 
 
