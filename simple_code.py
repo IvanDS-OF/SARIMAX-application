@@ -60,11 +60,13 @@ df = pd.read_csv("Data.csv")
 prueba = df["UNO"]
 
 
-
+# It is time to use the previous functions
 prueba_r = rangoSimple(prueba, paso = 10)
 prueba_m = mediaSimple(prueba, paso = 5)
 entrenamiento = entrenamiento(prueba, tiempos_futuros = 30)
 
+
+# Here just plotting :D
 plt.title("prueba")
 plt.plot(np.linspace(0, 400, len(prueba)), prueba, c="0.7", label="Dato Real") 
 plt.plot(np.linspace(0, 400, len(prueba_r)), np.array(prueba_r)+1, c="b", label="Rango de dato Real") #Rango
