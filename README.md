@@ -62,6 +62,8 @@ arima_result = arima_model.fit(disp=0)
 forecast = arima_result.forecast(tiempos_futuros)
 ```
 
+_)disp=0) es para no mostrar información del prograso del entrenamiento del modelo_
+
 Otro aspecto importante de la función son los comandos de limpieza. Cada que se invoca a la función, los datos que son introducidos serán limpiados con el método **dropna()** de pandas. 
 
 > Cuando se hace un sistema de predicción es recomendable separar todos los datos en 2, una de entrenamiento y otra de testeo, esto con la finalidad de encontrar los argumentos que se acomoden más a la información mediante el encuentro del _Error Cuadrático Medio_, pero en este caso el cliente solicitó que se utilizaran todos los datos posibles, buscando una mejor resolución del pronóstico. 
