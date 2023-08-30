@@ -18,6 +18,8 @@ SARMIAX significa **Seasonal AutoRegressive Integrated Moving Average with eXoge
 
 Podemos encontrar más información sobre el modelo en el siguiente [link](https://www.statsmodels.org/devel/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.html)
 
+El uso de este modelo de predicción fue empleado para generar un pronóstico en el comportamiento de un proceso industrial, el cual no tenía un sistema de control con retroalimentación, por lo que al pasar el tiempo la variable observada cambiaba de tendencia y no se podía análizar de forma contínua, es por eso que se optó por un sistema de pronóstico para mantener una postura pro-activa en el control de la variable. 
+
 
 ## Código / Program
 
@@ -42,6 +44,10 @@ pip3 install statsmodels
 > statsmodel version == 0.14.0
 > setuptools version == 58.1.0
 
+La primer función llamada _rango simple_ funciona para hacer un rango de los datos que son leídos, teniendo como argumentos los datos y el paso. Recordemos que el **Rango** es aquella función que evalúa un conjunto de datos y hace una resta del valor más grande y el más pequeño: 
 
+$$
+Range = maxValue - minValue
+$$
 
 
