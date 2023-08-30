@@ -10,33 +10,35 @@ warnings.filterwarnings("ignore")
 
 
 
-# Esta función sirvve para hacer un rango de los datos. 
+# Esta función sirve para hacer un rango de los datos. 
+# This functiongenerates a mean, there are two arguments. 
+# datos -> list, paso -> integer
 def rangoSimple (datos, paso):
     vector = []
-    sss = []
+    output = []
     for i in range(datos.index.values[0], datos.index.values[len(datos)-1]):
         s = datos
         vector.append(s[i])
         if len(vector) == paso:
             v = max(vector) - min(vector)
-            sss.append(v)
+            output.append(v)
             vector = []
-    return sss
+    return output
 
 
 def mediaSimple (datos, paso):
     vector = []
-    sss = []
+    output = []
     for i in range(datos.index.values[0], datos.index.values[len(datos)-1]):
         s = datos
         vector.append(s[i])
        
         if len(vector) == paso:
             v = np.mean(vector)
-            sss.append(v)
+            output.append(v)
             vector = []
     
-    return sss
+    return output
 
 
 def entrenamiento(dato1, tiempos_futuros = 20):
@@ -61,12 +63,9 @@ prueba = df["UNO"]
 
 prueba_r = rangoSimple(prueba, paso = 10)
 prueba_m = mediaSimple(prueba, paso = 5)
-
 entrenamiento = entrenamiento(prueba, tiempos_futuros = 30)
 
-
 plt.title("prueba")
-
 plt.plot(np.linspace(0, 400, len(prueba)), prueba, c="0.7", label="Dato Real") 
 plt.plot(np.linspace(0, 400, len(prueba_r)), np.array(prueba_r)+1, c="b", label="Rango de dato Real") #Rango
 plt.plot(np.linspace(0, 400, len(prueba_m)), np.array(prueba_m), c="k", label="Media de dato Real") #Media
