@@ -12,15 +12,11 @@ The forecast is future data that are obtained using a mathematical processing.
 
 Podemos encontrar el uso del pronóstico para obtener datos del tiempo, el clima, incluso las noticias tienen una sección del Pronóstico del tiempo, Igualmente, dentro de un ambiente más empresarial, podemos encontrar el uso del pronóstico para tener una idea de las ventas de un producto en una fecha determinada del año. También lo podemos encontrar para pronosticar el comportamiento de el uso de un servicio en la ciudad (viajes de trenes, vuelos, estancia en una cafetería, etc.)
 
-> 
-
-
-
-
 ## SARIMAX
 
+SARMIAX significa **Seasonal AutoRegressive Integrated Moving Average with eXogenous regressors** que es Modelo Autorregresivo integrado de media móvil estacional con variables exógenas. Resumiendo, es un modelo que nos puede ofrecer un pronóstico de datos con datos previamente cargados, teniendo en cuenta para el resultado la tendencia, la estacionalidad de los datos, y la media. 
 
-
+Podemos encontrar más información sobre el modelo en el siguiente [link](https://www.statsmodels.org/devel/generated/statsmodels.tsa.statespace.sarimax.SARIMAX.html)
 
 
 ## Código / Program
