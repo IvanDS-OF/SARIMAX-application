@@ -50,4 +50,27 @@ $$
 Range = maxValue - minValue
 $$
 
+Al ejecutar esta función y generar un histograma podremos ver un sesgo que tiene hacia el punto deseado, en el caso del ejemplo tenderán a 0. 
+
+La segunda función llamada _media simple_ tiene como argumentos de entrada a dos argumentos, a los datos y al paso. Recordemos que la media ó promedio es la suma de todos los valores dados sobre la cantidad de valores dados. La función fué realizada con dos finalidades, hacer un suavizado simple de los datos y la reducción de los datos totales. El argumento _paso_ está dado para que la media tenga un comportmaiento móvil. 
+
+Finalmente la función llamda _entrenamiento_ que contiene el uso del modelo de predicción SARIMAX. para hacer uso del modelo priero es necesario instalarlo e importarlo correctamente como se mencionó anteriormente. el comando para introducir los valores es: 
+
+```
+arima_model = SARIMAX(train_data, order=(1,1,1), seasonal_order=(1,1,1,12)
+arima_result = arima_model.fit(disp=0)
+forecast = arima_result.forecast(tiempos_futuros)
+```
+
+Otro aspecto importante de la función son los comandos de limpieza. Cada que se invoca a la función, los datos que son introducidos serán limpiados con el método **dropna()** de pandas. 
+
+> Cuando se hace un sistema de predicción es recomendable separar todos los datos en 2, una de entrenamiento y otra de testeo, esto con la finalidad de encontrar los argumentos que se acomoden más a la información mediante el encuentro del _Error Cuadrático Medio_, pero en este caso el cliente solicitó que se utilizaran todos los datos posibles, buscando una mejor resolución del pronóstico. 
+
+
+
+
+
+
+
+
 
