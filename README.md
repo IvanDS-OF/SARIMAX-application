@@ -66,6 +66,25 @@ Otro aspecto importante de la función son los comandos de limpieza. Cada que se
 
 > Cuando se hace un sistema de predicción es recomendable separar todos los datos en 2, una de entrenamiento y otra de testeo, esto con la finalidad de encontrar los argumentos que se acomoden más a la información mediante el encuentro del _Error Cuadrático Medio_, pero en este caso el cliente solicitó que se utilizaran todos los datos posibles, buscando una mejor resolución del pronóstico. 
 
+Siguiendo con el programa. Primero importamos uba base de datos _(la base de datos del ejemplo fue obtenida de un sensor analógico de forma manual.)_ Asignamos un vector de datos como datos de prueba y le asignaremos el nombre *prueba*. Aplicamos las 2 funciones previamente descritas (rango y media simples)y la función de entrenamiento. 
+
+Finalmente ploteamos todo de forma que se puedan apreciar los valores con comandos de matplotlib. 
+
+```
+prueba_r = rangoSimple(prueba, paso = 10)
+prueba_m = mediaSimple(prueba, paso = 5)
+entrenamiento = entrenamiento(prueba, tiempos_futuros = 30)
+
+plt.title("prueba")
+plt.plot(np.linspace(0, 400, len(prueba)), prueba, c="0.7", label="Dato Real") 
+plt.plot(np.linspace(0, 400, len(prueba_r)), np.array(prueba_r)+1, c="b", label="Rango de dato Real") #Rango
+plt.plot(np.linspace(0, 400, len(prueba_m)), np.array(prueba_m), c="k", label="Media de dato Real") #Media
+plt.plot(np.linspace(400, 430, len(entrenamiento)), entrenamiento, c="m", label="Pronóstico")
+plt.legend(loc='lower left', fontsize=18)
+plt.grid()
+plt.show()
+```
+
 
 
 
