@@ -4,16 +4,16 @@
 import pandas as pd 		# To read the data from a .csv file
 import numpy as np			# To generate some arrays
 import matplotlib.pyplot as plt 	#To plotting
-from statsmodels.tsa.statespace.sarimax import SARIMAX 	# THE MOST IMTPORTANT- This creates the forecasting data
 import warnings 	# To ignore some warnings
+
+from statsmodels.tsa.statespace.sarimax import SARIMAX 	# THE MOST IMTPORTANT- This creates the forecasting data
+
 warnings.filterwarnings("ignore")
 
-
-
-# Esta función sirve para hacer un rango de los datos. 
-# This functiongenerates a mean, there are two arguments. 
-# datos -> list, paso -> integer
+# Esta función sirve para hacer un rango de los datos
 def rangoSimple (datos, paso):
+	""" This functiongenerates a mean, there are two arguments. 
+	datos -> list, paso -> integer """
     vector = []
     output = []
     for i in range(datos.index.values[0], datos.index.values[len(datos)-1]):
